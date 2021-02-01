@@ -1,6 +1,6 @@
 
 <script lang="ts">
-import { filter } from "../../store";
+    import { filter } from "../../store";
 
 </script>
 

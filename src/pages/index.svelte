@@ -1,9 +1,9 @@
 <script>
-    import Navbar from './_components/AppBar.svelte';
-    import Banner from './_components/Banner.svelte';
-    import Footer from './_components/Footer.svelte';
-    import ReceipeList from './_components/ReceipeList.svelte';
-    import Search from './_components/Search.svelte';
+    import Navbar from './layouts/AppBar.svelte';
+    import Banner from './layouts/Banner.svelte';
+    import Footer from './layouts/Footer.svelte';
+    import ReceipeList from './layouts/ReceipeList.svelte';
+    import Search from './layouts/Search.svelte';
 </script>
 
 <Navbar/>

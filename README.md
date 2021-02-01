@@ -1,23 +1,67 @@
-# Metamata-code-challenge-frontend
+# routify-starter
 
-Membuat Website resep makanan;
+Starter template for [Routify](https://github.com/sveltech/routify).
 
-## Spesifikasi
-- Membuat tampilan sesuai contoh desain
-- Tampilan responsive baik di Desktop, Tablet, atau Mobile
-- Tombol favorit pada item makanan bisa di klik untuk menambahkan data pada localstorage
+### Get started
 
-## Kebutuhan Sistem
-- HTML & CSS
-- Menggunakan framework css seperti bootstrap, tailwind, atau manual menggunakan css biasa.
-- Bebas Menggunakan framework js apapun atau vanilla
+#### Starter templates
+| Template                                  | Description                                                 |
+|-------------------------------------------|-------------------------------------------------------------|
+| [master](https://example.routify.dev/)    | Default template, includes examples folder                  |
+| [blog](https://blog-example.routify.dev/) | Generates a blog from local markdown posts. Includes mdsvex |
+| [auth](https://auth-example.routify.dev/) | Embedded login on protected pages. Includes Auth0           |
 
-## Resource
-- [Link Desain](https://www.figma.com/file/RFVlJ99NQmpgIfx5AwAJiB/RecipeBooks?node-id=118%3A0)
-- [Link Assets](https://drive.google.com/drive/folders/195CbiY3IwFxhPW4HcNsob8Hy2uDau6U9?usp=sharing)
+To use a template, run:
 
-## Pengumpulan
-- Fork Repository ini untuk mulai mengerjakan
-- Tambahkan cara instalasi/run di README.md. Jika website di deploy maka tambahkan link pada README.md
-- WhatsApp ke [Qorthony](https://wa.me/08872402827) jika sudah selesai atau ada yang ingin ditanyakan
-- Batas Pengumpulan sebelu waktu interview 
+`npx @sveltech/routify init`
+
+or
+
+`npx @sveltech/routify init --branch <branch-name>`
+
+The above commands will populate the current directory, they don't create a new one.
+
+### npm scripts
+
+| Syntax           | Description                                                                       |
+|------------------|-----------------------------------------------------------------------------------|
+| `dev`            | Development (port 5000)                                                           |
+| `dev:nollup`     | Development with crazy fast rebuilds (port 5000)                                  |
+| `dev-dynamic`    | Development with dynamic imports                                                  |
+| `build`          | Build a bundled app with SSR + prerendering and dynamic imports                   |
+| `serve`          | Run after a build to preview. Serves SPA on 5000 and SSR on 5005                  |
+| `deploy:*`       | Deploy to netlify or now                                                          |
+| `export`         | Create static pages from content in dist folder (used by `npm run build`)         |
+
+### SSR and pre-rendering
+
+SSR and pre-rendering are included in the default build process.
+
+`npm run deploy:(now|netlify)` will deploy the app with SSR and prerendering included.
+
+To render async data, call the `$ready()` helper whenever your data is ready.
+
+If $ready() is present, rendering will be delayed till the function has been called.
+
+Otherwise it will be rendered instantly.
+
+See [src/pages/example/api/[showId].svelte](https://github.com/sveltech/routify-starter/blob/master/src/pages/example/api/%5BshowId%5D.svelte) for an example.
+
+### Production
+
+* For SPA or SSR apps please make sure that url rewrite is enabled on the server.
+* For SPA redirect to `__dynamic.html`.
+* For SSR redirect to the lambda function or express server.
+
+### Typescript
+
+For Typescript, we recommend [@lamualfa](https://github.com/lamualfa) excellent [routify-ts](https://github.com/lamualfa/routify-ts/)
+
+New project: `npx routify-ts init <project-name> [routify-init-args]`
+
+Existing project: `npx routify-ts convert [project-directory]`
+
+
+### Issues?
+
+File on Github! See https://github.com/sveltech/routify/issues .
